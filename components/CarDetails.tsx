@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { generateCarImageUrl } from "@/utils";
+import { CustomButton } from ".";
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -67,7 +68,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={generateCarImageUrl(car,'29')}
+                          src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           fill
                           priority
@@ -76,7 +77,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={generateCarImageUrl(car,'33')}
+                          src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           fill
                           priority
@@ -85,7 +86,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={generateCarImageUrl(car,'13')}
+                          src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           fill
                           priority
@@ -114,6 +115,12 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                         </div>
                       ))}
                     </div>
+                    <CustomButton
+                      title="Booking"
+                      containerStyles="w-full mt-2 py-[16px] rounded-full bg-primary-blue"
+                      textStyles="text-white text-[16px] leading-[17px] font-bold"
+                      rightIcon="/right-arrow.svg"
+                    />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
